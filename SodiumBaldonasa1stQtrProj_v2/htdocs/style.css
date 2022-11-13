@@ -1,0 +1,102 @@
+{
+    padding: 0;
+    margin: 0;
+}
+.wrapper{
+    background: url(images/midnightsbg.jpg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.navbar{rgba(0,0,0,0.4);
+    height: 80px;
+    width: 100%;
+    bacground: 
+}
+.logo{
+    width: 140px;
+    height: auto;
+    padding: 20px 100px;
+}
+.navbar ul{
+    float: right;
+    margin-right: 20px;
+}
+.navbar ul li{
+    list-style: none;
+    margin: 0 8px;
+    display: inline-block;
+    line-height: 80px;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: purple;
+    font-size: 20px;
+    padding: 6px 13px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    transition: .4s;
+}
+.navbar ul li a:hover{
+	background-color:indigo;
+	color:#C996CC;
+	box-shadow: 0 0 10px #C996CC;
+}
+.wrapper .center{
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    transform: tranlate(-50%, -50%);
+    font-family:'Courier New', Courier, monospace;
+    user-select: none;
+}
+.center h1{
+    color: #1C0C5B;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+.center h2{
+    color: #1C0C5B;
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+.buttons {
+	text-align: center;
+	text-decoration: none;
+	transition:all.5s ease;
+}
+.buttons .button1{
+	margin-right: 25px;
+}
+	
+.buttons ul{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	margin-top:70px;
+	color:#1C0C5B;
+	list-style:none;
+}	
+.buttons ul li{
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	padding: 15px;
+	font-size: 20px;
+	font-weight: bold;
+	border: 1px solid #C996CC;
+	background-color:#C996CC;
+}
+.buttons ul li a{
+	text-decoration: none;
+	color:#1C0C5B;
+	padding:10px;
+	transition:all.5s ease;
+	
+	
+}
+.buttons ul li a:hover{
+	background-color:indigo;
+	color:#C996CC;
+	box-shadow: 0 0 10px #C996CC;
+
+}
