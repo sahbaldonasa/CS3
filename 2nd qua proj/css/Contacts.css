@@ -1,0 +1,153 @@
+:root{
+    --pink:#B99257;
+}
+
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+section{
+    padding:2rem 9%;
+}
+
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    color: #2e364c;;
+    padding:1rem;
+    margin:2rem 0;
+    background:rgba(255, 51, 153,.05);
+}
+
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background:#2e364c;
+    color:#101D29;
+    padding:.9rem 3.5rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+.btn:hover{
+    background:var(--pink);
+}
+
+header{
+    position: fixed;
+    top:0; left:0; right:0;
+    background:#101D29;
+    padding:9px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+header .logo{
+    width: 3px;
+    height: auto;
+    margin-left: 15px;
+}
+
+header .navbar a{
+    font-size: 2rem;
+    padding:0 1.5rem;
+    color:#666;
+}
+
+header .navbar a:hover{
+    background-color:#63331c;
+    color:var(--pink);
+	box-shadow: 0 0 10px #87a6bb;}
+
+header .icons a{
+    font-size: 2.5rem;
+    color:#2e364c;
+    margin-left: 1.5rem;
+}
+
+header .icons a:hover{
+    color:var(--pink);
+}
+
+header #toggler{
+    display: none;
+}
+
+header .fa-bars{
+    font-size: 3rem;
+    color:#2e364c;
+    border-radius: .5rem;
+    padding:.5rem 1.5rem;
+    cursor: pointer;
+    border:.1rem solid rgba(0,0,0,.3);
+    display: none;
+}
+.section{
+    margin-top: 100px;
+    padding: 0px;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ac9fb8;
+}
+.container{
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 100px;
+}
+.content-section{
+    float: left;
+    width: 50%;
+}
+.image-section{
+    float: right;
+    width: 45%;
+}
+.image-section img{
+    width: 80%;
+    height: auto;
+}
+.content-section .title{
+    text-transform: uppercase;
+    font-size: 28px;
+}
+.content-section .content h3{
+    margin-top: 20px;
+    color: #ae7268;
+    font-size: 19px;
+}
+.content-section .content p{
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+.content-section .social{
+    margin-top: 40px;
+}
+.content-section .social i{
+    color: #b99257;
+    font-size: 30px;
+    padding: 0px 10px;
+}
+.content-section .social i:hover{
+    color: #2e364c;
+}
