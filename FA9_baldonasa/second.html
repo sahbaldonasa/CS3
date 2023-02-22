@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="wiewport" content="width=device-width, initial scale=1.0">
+	<style>
+		*{
+			text-align:center;
+		}
+		width: 100px;
+		height: 1000px;
+		}
+		</style>
+	<title>Second Page</title>
+	<script>
+		function image1() {
+			document.getElementById("myImage").src = "images/bunnies.png";
+		}
+		function image2() {
+			document.getElementById("myImage").src = "images/bunny and duck.jpg";
+		}
+	</script>
+</head>
+<body>
+	<img id="myImage" src="images/bunnies.png">
+	<br>
+	<button onclick="image1()">Image 1</button>
+	<button onclick="image2()">Image 2</button>
+</body>
+</html>
