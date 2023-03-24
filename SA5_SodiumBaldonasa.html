@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Online Shop</title>
+    <!-- type in the necessary meta tags -->
+    <style>
+        span {color: blue; text-decoration:underline}
+        button {width: 100px; padding: 5px; background: pink;}
+    </style>
+</head>
+<body>
+    <h1>Welcome to Aeon's Shop</h1>
+    <h2>Please select from the following items</h2>
+    <!--- provide your own 3 items and their prices in the list --->
+    <ol>
+        <li>Ariana Grande Cloud Eau de Parfum Spray: 4800.00</li>
+        <li>Ariana Grande MOONLIGHT Eau de Parfum Spray: 3495.00</li>
+        <li>Ariana Grande R.E.M Women Eau de Parfum Spray: 4899.00</li>
+    </ol>
+    <!-- the following will be used to display purchase information -->
+    <p>Item selected: <span id="item"></span></p>
+    <p>Qty bought: <span id="qty"></span></p>
+    <p>Amount to pay for the item: <span id="bill"></span></p>
+    <p>Current Total Bill: <span id="tbill">0</span></p>
+    <button onclick="buyItem()">Buy an Item</button>
+    <button onclick="clearAll()">Clear</button>
+
+    <script>
+        const item1 = {name: "Ariana Grande Cloud Eau de Parfum Spray", price: 4800.00};
+        const item2 = {name: "Ariana Grande MOONLIGHT Eau de Parfum Spray", price: 3495.00};
+        const item3 = {name: "Ariana Grande R.E.M Women Eau de Parfum Spray", price: 4899.00};
+    
+        function buyItem() {
+            let itemNum = prompt("Enter the item number:");
+            let qty = prompt("Enter the quantity:");
+            if (qty && !isNaN(qty)) {
+                qty = parseInt(qty);
+                let item;
+                switch (itemNum) {
+                    case "1":
+                        item = item1;
+                        break;
+                    case "2":
+                        item = item2;
+                        break;
+                    case "3":
+                        item = item3;
+                        break;
+                    default:
+                        alert("Invalid item number.");
+                        return;
+                }
+                let bill = item.price * qty;
+                document.getElementById("item").innerHTML = item.name;
+                document.getElementById("qty").innerHTML = qty;
+                document.getElementById("bill").innerHTML = bill.toFixed(2);
+                let currentBill = parseFloat(document.getElementById("tbill").innerHTML);
+                currentBill += bill;
+                document.getElementById("tbill").innerHTML = currentBill.toFixed(2);
+            } else {
+                alert("Invalid quantity.");
+            }
+        }
+    
+        function clearAll() {
+            document.getElementById("item").innerHTML = "";
+            document.getElementById("qty").innerHTML = "";
+            document.getElementById("bill").innerHTML = "";
+            document.getElementById("tbill").innerHTML = "0";
+        }
+    </script>
+    
+</body>
+
+</html>

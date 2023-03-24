@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>One Time Password </title>
+		<!-- provide the necessary meta tags -->
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            a {font-size: 0.5em; color: maroon}
+        </style>
+    </head>
+    <body onload="generateOTP()">
+        <h1> Final Verification Step </h1>
+        <h2> Current OTP: <span id="otp"> _ _ _ _ _ _ <span> <a href="#" onclick="generateOTP()"> New OTP </a></h2>
+        <button onclick="enterOTP()"> Enter the OTP as shown above </button>
+        <script>
+            // This function is for the OTP generation
+            function generateOTP() {
+                var digits = '0123456789';
+                var otp = '';
+                for (var i = 0; i < 6; i++) {
+                    otp += digits[Math.floor(Math.random() * 10)];
+                }
+                document.getElementById('otp').textContent = otp;
+            }
+            
+            // This function is for us to check whether the OTP is correct or incorrect.
+            function enterOTP() {
+                var enteredOTP = prompt('Please enter the OTP:');
+                var currentOTP = document.getElementById('otp').textContent;
+                if (enteredOTP === currentOTP) {
+                    window.open('https://l.facebook.com/l.php?u=https%3A%2F%2Fyoutu.be%2Fb7QlX3yR2xs&h=AT0cP0hVxAMSJapdsPTxkIrHR-oIoEDQxHGY3nd4f8nqJXlAHSp0g1sLoXCaygp01egb2-_IGP-g8M2tiVqSxRs34insU5ORgJho3oiAN97EEMgoe3dybp742nc4OQ52Nl12UQQEGljs2Yo&s=1');
+                } else {
+                    alert('Code is invalid. Please enter correct OTP.');
+                    generateOTP();
+                }
+            }
+        </script>
+</body>
+</html>

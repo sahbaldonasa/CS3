@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Numerology</title>
+		<!-- provide the necessary meta tags -->
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            span {font-size: 0.5em; color: maroon}
+        </style>
+
+	</head>
+<body>
+	<h1> Your Fortune is in your name </h1>
+	<h2> Your Name is: <span id="thename"> </span></h2>
+    <h2> Today's fortune: <span id="fortune"> </span></h2>
+    
+    <button onclick="showFortune()"> Click here to enter your name </button>
+ <script>
+ 	function showFortune() {
+		const name = prompt("Enter your full name:");
+		document.getElementById("thename").textContent = name;
+		let sum = 0;
+		for(let i=0; i<name.length; i++) {
+			sum += parseInt(name[i], 36) - 9;
+		}
+		while(sum > 9) {
+			let temp = sum;
+			sum = 0;
+			while(temp > 0) {
+				sum += temp % 10;
+				temp = Math.floor(temp / 10);
+			}
+		}
+		let fortune;
+		switch(sum) {
+			case 0:
+				fortune = "You are going to have a relaxed and carefree day today.";
+				break;
+			case 1:
+				fortune = "Your lack of understanding to your peers might get you into troubles.";
+				break;
+			case 2:
+				fortune = "Today is your time to shine and show up as the main character in the story of your life.";
+				break;
+			case 3:
+				fortune = "You will have a very disappointing day today. Manage your expectations.";
+				break;
+			case 4:
+				fortune = "Today will be the best day of your week! Rise up, Shine, and do YOU!!.";
+				break;
+			case 5:
+				fortune = "It’s set to be a pretty good day for you today! Do Socialize, do fun things and maybe mingle with your friends!!.";
+				break;
+			case 6:
+				fortune = "Opportunities, new directions and advancements will come to you at workplace.";
+				break;
+			case 7:
+				fortune = "You may consider travelling today, for you might just find love while your out there.";
+				break;
+			case 8:
+				fortune = "Watch out for arguments and drama. Today is going to be a stressful day.";
+				break;
+			case 9:
+				fortune = "Today, you will have what you've been wanting for a long time!! Be grateful and have a good day! ";
+				break;
+		}
+		document.getElementById("fortune").textContent = fortune;
+	}
+</script>
+
+   
+    
+</body>
+</html>
