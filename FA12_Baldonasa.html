@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Baldonasa-Multiplication Table</title>
+	<style>
+		*{
+			text-align: center;
+		}
+		#table {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		button{
+			margin-top:10px;
+		}
+		table {
+			border-collapse: collapse;
+			margin-top: 20px;
+		}
+		th{
+			border: 1px solid black;
+			padding: 5px;
+			background-color: pink;
+		}
+		td {
+			border: 1px solid black;
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<h3>Enter a number between 2 and 10:</h3>
+	<input type="number" id="rowNum">
+	<input type="number" id="colNum"><br/>
+	<button onclick="tableGenerator()">Click when ready</button>
+	<div id="table"></div>
+	<script>
+		function tableGenerator() {
+			var rowNum = parseInt(document.getElementById("rowNum").value);
+			var colNum = parseInt(document.getElementById("colNum").value);
+			if (rowNum < 2 || rowNum >10 || colNum < 2 || colNum > 10) {
+				alert("Please enter numbers between 2 and 10");
+				return;
+			}
+			var table = "<table>";
+			var rowCtr = 1;
+			while(rowCtr <= rowNum){
+				var columnCtr = 1;
+				table += "<tr>";
+				while(columnCtr <= colNum){
+					if (rowCtr === 1) {
+						table += "<th>" + columnCtr + "</th>";
+					}
+					else if (columnCtr === 1) {
+						table += "<th>" + rowCtr + "</th>";
+					}
+					else {
+						table += "<td>" + (rowCtr * columnCtr) + "</td>";
+					}
+					columnCtr++;
+				}
+				table += "</tr>";
+				rowCtr++;
+			}
+			table += "</table>";
+			document.getElementById("table").innerHTML = table;
+		}
+	</script>
+</body>
+</html>
